@@ -2,8 +2,8 @@ FROM centos
 
 LABEL Dhans dhans@dhans.org
 
-RUN mkdir /opt/tomcat/
 RUN groupadd -r tomcat && useradd -r -gtomcat tomcat
+RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
 RUN curl -L "https://dl.bintray.com/dhansking/dhans/apache-tomcat-8.5.55.tar.gz" -o apache-tomcat-8.5.55.tar.gz
