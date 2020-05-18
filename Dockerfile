@@ -1,4 +1,4 @@
-#FROM centos
+FROM centos
 
 LABEL Dhans dhans@dhans.org
 
