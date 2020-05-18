@@ -2,7 +2,7 @@ FROM centos
 
 LABEL Dhans dhans@dhans.org
 
-RUN groupadd -r tomcat && useradd -r -gtomcat tomcat
+RUN groupadd -r tomcat && useradd -r -g tomcat tomcat
 RUN mkdir /opt/tomcat/
 
 WORKDIR /opt/tomcat
@@ -19,4 +19,6 @@ RUN curl -O -L https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWeb
 
 EXPOSE 8080
 
-CMD ["/opt/tomcat/bin/catalina.sh", "run"]
+WORKDIR /opt/tomcat/bin
+ENTRYPOINT ["catalina.sh"]
+CMD ["tomcat"]
